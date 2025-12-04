@@ -20,6 +20,92 @@ export interface GameState extends CosmicObject {
     choices_made: string
     health?: number
     inventory?: string
+    level?: number
+    experience?: number
+    achievements?: string
+    quests_completed?: string
+    total_playtime?: number
+  }
+}
+
+export interface CharacterClass extends CosmicObject {
+  type: 'character-classes'
+  metadata: {
+    description: string
+    starting_health: number
+    starting_abilities: string
+    stat_bonuses: string
+    class_icon: string
+    special_traits: string
+  }
+}
+
+export interface Item extends CosmicObject {
+  type: 'items'
+  metadata: {
+    item_type: string
+    rarity: string
+    description: string
+    stats: string
+    usable_by: string
+    image_url?: string
+    sell_value: number
+  }
+}
+
+export interface Achievement extends CosmicObject {
+  type: 'achievements'
+  metadata: {
+    description: string
+    icon: string
+    points: number
+    unlock_criteria: string
+    reward: string
+  }
+}
+
+export interface Quest extends CosmicObject {
+  type: 'quests'
+  metadata: {
+    quest_giver: string
+    description: string
+    difficulty: string
+    chapters: string
+    rewards: string
+    prerequisites: string
+  }
+}
+
+export interface StoryScenario extends CosmicObject {
+  type: 'story-scenarios'
+  metadata: {
+    scenario_type: string
+    difficulty_level: string
+    applicable_classes: string
+    story_template: string
+    possible_outcomes: string
+    rewards: string
+  }
+}
+
+export interface LeaderboardEntry extends CosmicObject {
+  type: 'leaderboard-entries'
+  metadata: {
+    player_name: string
+    score: number
+    achievements_unlocked: number
+    quests_completed: number
+    time_period: string
+    rank: number
+  }
+}
+
+export interface GameSettings extends CosmicObject {
+  type: 'game-settings'
+  metadata: {
+    difficulty_multipliers: string
+    ai_generation_params: string
+    game_balance: string
   }
 }
 
@@ -49,6 +135,9 @@ export interface GameStateData {
   choices: StoryChoice[]
   health: number
   inventory: string[]
+  level?: number
+  experience?: number
+  achievements?: string[]
 }
 
 export type CharacterClass = 
