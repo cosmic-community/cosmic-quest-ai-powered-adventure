@@ -140,7 +140,8 @@ export interface GameStateData {
   achievements?: string[]
 }
 
-export type CharacterClass = 
+// Changed: Renamed from CharacterClass to CharacterClassName to avoid duplicate identifier
+export type CharacterClassName = 
   | 'warrior' 
   | 'mage' 
   | 'rogue' 
