@@ -9,7 +9,8 @@ export default function AudioPlayer() {
 
   useEffect(() => {
     // Create audio element for 8-bit soundtrack
-    audioRef.current = new Audio('https://cdn.cosmicjs.com/audio-example.mp3')
+    // Using a classic 8-bit adventure game style chiptune
+    audioRef.current = new Audio('https://cdn.pixabay.com/audio/2022/03/10/audio_4a468b350c.mp3')
     audioRef.current.loop = true
     audioRef.current.volume = 0.3
 
