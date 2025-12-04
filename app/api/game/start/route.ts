@@ -44,7 +44,7 @@ CHOICES:
 
           // Extract choices from the full text
           const choicesMatch = fullText.match(/CHOICES:\s*\n1\.\s*(.+)\n2\.\s*(.+)\n3\.\s*(.+)/i)
-          if (choicesMatch) {
+          if (choicesMatch && choicesMatch[1] && choicesMatch[2] && choicesMatch[3]) {
             const choices = [
               choicesMatch[1].trim(),
               choicesMatch[2].trim(),

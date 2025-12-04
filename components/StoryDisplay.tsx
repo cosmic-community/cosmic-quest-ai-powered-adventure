@@ -18,7 +18,8 @@ export default function StoryDisplay({
 }: StoryDisplayProps) {
   // Remove CHOICES section from display
   const cleanStory = (text: string) => {
-    return text.split(/CHOICES:/i)[0].trim()
+    const parts = text.split(/CHOICES:/i)
+    return parts[0]?.trim() ?? ''
   }
 
   return (
